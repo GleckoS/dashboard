@@ -1,0 +1,6 @@
+@mixin container {
+  max-width: 1366px !important;
+  width: calc(100% - $page-margin * 2) !important;
+  margin: 36px auto 48px auto !important;
+  height: 100% !important;
+}

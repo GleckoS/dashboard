@@ -1,0 +1,53 @@
+@import "_mixins", "_variables";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #f7fbff;
+  line-height: 150%;
+  font-size: clamp(1rem, calc(18vw / 7.68), calc(18rem / 16));
+  font-family: Arial, sans-serif;
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 1px solid var(--primary-900);
+  outline-offset: 5px;
+}
+
+main,
+.max-width {
+  @include container;
+}
+
+header {
+  @include container;
+  text-align: center;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: none;
+  position: relative !important;
+  overflow: hidden;
+
+  .background-image {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 0;
+    width: 100%;
+    height: fit-content;
+    transform: translateY(-50%) translateX(-50%);
+  }
+}
